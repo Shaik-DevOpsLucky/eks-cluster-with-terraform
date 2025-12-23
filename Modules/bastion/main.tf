@@ -1,10 +1,11 @@
 resource "aws_instance" "bastion" {
-  ami                  = "ami-0ecb62995f68bb549"
-  instance_type        = "t3.small"
-  subnet_id            = var.public_subnet_ids[0]
-  iam_instance_profile = var.instance_profile
+  ami                         = var.ami_id
+  instance_type               = var.instance_type
+  subnet_id                   = var.public_subnet_ids[0]
+  iam_instance_profile        = var.instance_profile
+  associate_public_ip_address = true
 
   tags = {
-    Name = "bastion-host"
+    Name = "eks-bastion"
   }
 }
