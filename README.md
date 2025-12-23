@@ -241,6 +241,6 @@ kubectl get deployments -A
 
 ✅ You now have a **secure, private, production-grade EKS setup**
 
-Preparedby:
-Shaik.Moulali
-Cloud and DevOps Consultant
+## Preparedby:
+* Shaik.Moulali
+* Cloud and DevOps Consultant
