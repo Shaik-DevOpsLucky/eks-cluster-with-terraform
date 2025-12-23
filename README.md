@@ -76,7 +76,7 @@ Ensure your IAM user/role has permissions for:
 From the **root directory**:
 
 ```bash
-cd eks-private-cluster
+cd eks-cluster-with-terraform
 
 terraform init
 terraform validate
