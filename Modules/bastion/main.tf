@@ -1,11 +1,10 @@
-resource "aws_instance" "bastion" {
-  ami                         = var.ami_id
-  instance_type               = var.instance_type
-  subnet_id                   = var.public_subnet_ids[0]
-  iam_instance_profile        = var.instance_profile
-  associate_public_ip_address = true
+module "bastion" {
+  source = "./modules/bastion"
 
-  tags = {
-    Name = "eks-bastion"
-  }
+  vpc_id            = module.vpc.vpc_id
+  public_subnet_ids = module.vpc.public_subnet_ids
+  instance_profile  = module.iam.bastion_instance_profile
+
+  ami_id        = "ami-0ecb62995f68bb549"
+  instance_type = "t3.small"
 }
